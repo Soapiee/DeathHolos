@@ -1,6 +1,6 @@
 # **DeathHolos**
 <p align="center">
-  <img width="256" height="256" alt="DH logo" src="https://i.ibb.co/5CSYJz1/DH-64x64.png" /></p>  
+  <img width="256" height="256" alt="DH logo" src="https://i.ibb.co/j9xX4384/Untitled-2.png" /></p>  
 
 ## Introduction
 Spawn a hologram of your design, whenever a player dies!
