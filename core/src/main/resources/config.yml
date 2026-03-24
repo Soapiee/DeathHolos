@@ -1,3 +1,11 @@
+## -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- ##
+##                                    DeathHolos                                     ##
+##                                    By Soapiee                                     ##
+##                                                                                   ##
+##       Message me on Discord for support, feature requests, bug reports, etc       ##
+##                        discord.com/users/152044111153594369                       ##
+## -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- ##
+
 settings:
   # Do you want there to be a notification given in console and to admins when there is an update available
   # Default: true
@@ -49,7 +57,7 @@ hologram_groups:
     design:
       - "&a★ ★ ★ ★ ★"
       - "%player% died to %killer%%cause%"
-      - "example line 2"
+      - " "
       - "&a★ ★ ★ ★ ★"
   default:
     priority: 10
@@ -58,20 +66,3 @@ hologram_groups:
       - "%player% died to %killer%%cause%"
       - "example line 2"
       - "&a-----"
-
-
-
-
-#designs:
-#  cross_hologram:
-#    design:
-#      - "&a× × × × ×"
-#      - "%player% died"
-#      - " "
-#      - "&a× × × × ×"
-#  star_hologram:
-#    design:
-#      - "&a★ ★ ★ ★ ★"
-#      - "%player% died to %killer%%cause%"
-#      - "example line 2"
-#      - "&a★ ★ ★ ★ ★"
