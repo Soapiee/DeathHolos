@@ -29,7 +29,9 @@ public class InternalsManager {
 
         try {
             String packageName = InternalsManager.class.getPackage().getName();
-            String providerName = (majorVersion >= 19 && minorVersion > 3 ? "HologramHandler_1_19_4" : "HologramHandlerLegacy");
+            String providerName = "HologramHandlerLegacy";
+            if (majorVersion == 19 && minorVersion > 3) providerName = "HologramHandler_1_19_4";
+            if (majorVersion > 19) providerName = "HologramHandler_1_19_4";
 
             hologramHandler = (HologramHandler) Class.forName(packageName + "." + providerName).newInstance();
 
