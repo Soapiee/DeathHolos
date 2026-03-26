@@ -16,7 +16,7 @@ public class ReloadSub extends AbstractAdminSub {
     @Getter private final String IDENTIFIER = "reload";
 
     public ReloadSub(DeathHolos main) {
-        super(main, "deathholos.reload", 1, 1);
+        super(main, "deathholos.admin.reload", 1, 1);
     }
 
     // /adh reload

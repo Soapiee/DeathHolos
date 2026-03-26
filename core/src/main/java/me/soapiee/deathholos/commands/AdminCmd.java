@@ -79,7 +79,8 @@ public class AdminCmd implements CommandExecutor, TabCompleter {
 
         switch (args.length) {
             case 1:
-                results.add("spawn");
+                results.add("help");
+//                results.add("spawn");
 
                 if (sender instanceof Player && sender.hasPermission("deathholos.admin")) {
                     results.add("reload");
