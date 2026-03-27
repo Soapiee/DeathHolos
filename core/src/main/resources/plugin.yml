@@ -19,6 +19,6 @@ permissions:
   deathholos.admin:
     default: op
   deathholos.admin.reload:
-    default: false
+    default: op
   deathholos.silentdeath:
     default: false

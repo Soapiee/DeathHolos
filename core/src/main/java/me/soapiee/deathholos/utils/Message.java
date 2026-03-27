@@ -12,7 +12,7 @@ public enum Message {
     LOGGERFILEERROR("logger_file_error", "&cThe logger.log file could not be created"),
     LOGGERLOGSUCCESS("logger_log_success", "&cAn error was added to the logger.log file"),
     LOGGERLOGERROR("logger_log_error", "&cA new error log failed to be saved"),
-//    INVALIDHOLOGROUP("invalid_hologram", "&cA hologram with that identifier does not exist"),
+    INVALIDHOLOGROUP("invalid_hologram", "&cA hologram with that identifier does not exist"),
     GROUPPRIORITYERROR("invalid_group_priority", "&cInvalid priority for hologram group &e%group_identifier%"),
     GROUPPRIORITYDUPE("duplicate_group_priority", "&cThe priority set for hologram group &e%group_identifier% already exists"),
     GROUPPERMISSIONERROR("invalid_group_permission", "&cInvalid permission for hologram group &e%group_identifier%"),
@@ -26,13 +26,14 @@ public enum Message {
     RELOADSUCCESS("reload_success", "&aSuccessfully reloaded DeathHolos"),
     RELOADINPROGRESS("reload_inprogress", "&eReloading configuration..."),
     RELOADERROR("reload_error", "&cError reloading DeathHolos"),
-//    CMDHOLOCAUSE("admin_command_death_cause", "testing too much"),
-//    CMDHOLOKILLER("admin_command_killer", "Notch"),
-//    HOLOSPAWNED("hologram_spawned", "&aYou spawned a hologram at your location"),
-//    HOLOSPAWNEDMAX("hologram_spawned_max", "&cThe maximum number of holograms for you, has been reached. Please wait"),
+    CMDHOLOCAUSE("admin_command_death_cause", "testing too much"),
+    CMDHOLOKILLER("admin_command_killer", "Notch"),
+    HOLOSPAWNED("hologram_spawned", "&aYou spawned a hologram at your location"),
+    HOLOSPAWNEDMAX("hologram_spawned_max", "&cThe maximum number of holograms for you, has been reached. Please wait"),
     ADMINHELP("admin_help", "#17d5eb--------- Admin Help ---------"
                     + "\n#17d5ebKey: < > = Optional | [ ] = Required"
-                    + "\n#17d5eb/%cmd_label% reload &7- Reloads the plugin"),
+                    + "\n#17d5eb/%cmd_label% reload &7- Reloads the plugin"
+                    + "\n#17d5eb/%cmd_label% spawn <group id> &7- Spawns a hologram at your location, of the specified hologram ID/priority"),
 
     //                    --->    1.16 MINECRAFT DEATH CAUSES    <---
     BLOCK_EXPLOSION("death_cause_block_explosion", "explosions"),

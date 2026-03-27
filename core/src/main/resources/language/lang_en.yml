@@ -14,7 +14,8 @@ invalid_group_permission: "&cInvalid permission for hologram group &e%group_iden
 invalid_group_design: "&cInvalid design for hologram group &e%group_identifier%"
 group_created: "&aGroup &e%group_identifier% &awas successfully created"
 legacy_holograms_enabled: "&aYour version is below 1.19.4 so the legacy hologram system has been enabled"
-death_cause_error: "&cThere was an error with the players cause of death. Send the log to the develope"
+death_cause_error: "&cThere was an error with the players cause of death. Send the log to the developer"
+invalid_hologram: "&cA hologram with that identifier does not exist"
 
 #                    --->    ADMIN MESSAGES    <---
 update_available: "&aThere is an update available for DeathHolos"
@@ -25,6 +26,11 @@ admin_help:
   - "#17d5eb--------- Admin Help ---------"
   - "#17d5ebKey: < > = Optional | [ ] = Required"
   - "#17d5eb/%cmd_label% reload &7- Reloads the plugin"
+  - "#17d5eb/%cmd_label% spawn <group id> &7- Spawns a hologram at your location, of the specified hologram ID/priority"
+admin_command_death_cause: "testing too much"
+admin_command_killer: "Notch"
+hologram_spawned: "&aYou spawned a hologram at your location"
+hologram_spawned_max: "&cThe maximum number of holograms for you, has been reached. Please wait"
 
 #                    --->    1.16 MINECRAFT DEATH CAUSES    <---
 death_cause_block_explosion: "explosions"

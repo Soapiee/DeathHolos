@@ -74,7 +74,7 @@ public class MessageManager {
     }
 
     private String getPrefix(Message messageEnum) {
-        if (messageEnum == Message.UPDATEAVAILABLE
+        if (messageEnum == Message.UPDATEAVAILABLE || messageEnum == Message.MUSTBEPLAYERERROR
                 || messageEnum == Message.BLOCK_EXPLOSION || messageEnum == Message.CONTACT
                 || messageEnum == Message.CRAMMING || messageEnum == Message.CUSTOM
                 || messageEnum == Message.DRAGON_BREATH || messageEnum == Message.DROWNING
@@ -91,7 +91,7 @@ public class MessageManager {
                 || messageEnum == Message.VOID || messageEnum == Message.WITHER
                 || messageEnum == Message.FREEZE || messageEnum == Message.SONIC_BOOM
                 || messageEnum == Message.KILL || messageEnum == Message.WORLD_BORDER
-//                || messageEnum == Message.CMDHOLOCAUSE || messageEnum == Message.CMDHOLOKILLER
+                || messageEnum == Message.CMDHOLOCAUSE || messageEnum == Message.CMDHOLOKILLER
                 || messageEnum == Message.CAMPFIRE || messageEnum == Message.DEATHCAUSEERROR
                 || messageEnum == Message.HOOKEDPLACEHOLDERAPI || messageEnum == Message.NOPERMISSION
                 || messageEnum == Message.ADMINHELP
