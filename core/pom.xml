@@ -10,7 +10,7 @@
     <parent>
         <groupId>me.soapiee</groupId>
         <artifactId>deathholos-parent</artifactId>
-        <version>1.0.0</version>
+        <version>1.0.1</version>
     </parent>
 
     <properties>
@@ -53,11 +53,11 @@
                             <relocations>
                                 <relocation>
                                     <pattern>org.bstats</pattern>
-                                    <shadedPattern>me.soapiee.biomemastery.libs.bstats</shadedPattern>
+                                    <shadedPattern>me.soapiee.deathholos.libs.bstats</shadedPattern>
                                 </relocation>
                                 <relocation>
                                     <pattern>me.soapiee.bukkit</pattern>
-                                    <shadedPattern>me.soapiee.biomemastery.libs.metrics</shadedPattern>
+                                    <shadedPattern>me.soapiee.deathholos.libs.metrics</shadedPattern>
                                 </relocation>
                             </relocations>
                         </configuration>
