@@ -74,8 +74,7 @@ public class MessageManager {
     }
 
     private String getPrefix(Message messageEnum) {
-        if (messageEnum == Message.UPDATEAVAILABLE || messageEnum == Message.MUSTBEPLAYERERROR
-                || messageEnum == Message.BLOCK_EXPLOSION || messageEnum == Message.CONTACT
+        if (messageEnum == Message.BLOCK_EXPLOSION || messageEnum == Message.CONTACT
                 || messageEnum == Message.CRAMMING || messageEnum == Message.CUSTOM
                 || messageEnum == Message.DRAGON_BREATH || messageEnum == Message.DROWNING
                 || messageEnum == Message.DRYOUT || messageEnum == Message.ENTITY_ATTACK

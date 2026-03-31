@@ -9,9 +9,11 @@ import me.soapiee.deathholos.logic.GroupFactory;
 import me.soapiee.deathholos.managers.ConfigManager;
 import me.soapiee.deathholos.managers.HologramManager;
 import me.soapiee.deathholos.managers.MessageManager;
+import me.soapiee.deathholos.managers.UpdateManager;
 import me.soapiee.deathholos.utils.CustomLogger;
 import me.soapiee.deathholos.utils.Message;
 import me.soapiee.deathholos.utils.Utils;
+import org.bstats.bukkit.Metrics;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class DeathHolos extends JavaPlugin {
@@ -22,22 +24,22 @@ public final class DeathHolos extends JavaPlugin {
     @Getter private ConfigManager configManager;
     @Getter private HologramManager holoManager;
     @Getter private boolean placeholderAPIHooked;
-//    @Getter private UpdateManager updateManager;
+    @Getter private UpdateManager updateManager;
 
     @Override
     public void onEnable() {
         saveDefaultConfig();
         messageManager = new MessageManager(this);
         customLogger = new CustomLogger(this);
+        new Metrics(this, 30432);
 
         initiateManagers();
         registerHooks();
         registerListeners();
         registerCommands();
 
-        // TODO:
-//        updateChecker = new UpdateManager(this, 125077);
-//        updateChecker.updateAlert(Bukkit.getConsoleSender());
+        updateManager = new UpdateManager(this, 133766);
+        updateManager.updateAlert(Bukkit.getConsoleSender());
     }
 
     @Override

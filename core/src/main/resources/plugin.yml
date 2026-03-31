@@ -18,7 +18,11 @@ commands:
 permissions:
   deathholos.admin:
     default: op
+    children:
+      deathholos.admin.updatenotif: true
   deathholos.admin.reload:
     default: op
   deathholos.silentdeath:
     default: false
+  deathholos.admin.updatenotif:
+    default: op

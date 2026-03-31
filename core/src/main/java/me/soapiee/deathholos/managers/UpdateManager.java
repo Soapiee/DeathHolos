@@ -37,7 +37,8 @@ public class UpdateManager {
             return;
         }
 
-        int currentVersion = Integer.parseInt(currentVersionString.replace("v", "").replace(".", ""));
+//        int currentVersion = Integer.parseInt(currentVersionString.replace("v", "").replace(".", ""));
+        int currentVersion = 98;
         int latestVersion = Integer.parseInt(getLatestVersion().replace("v", "").replace(".", ""));
 
         if (currentVersion < latestVersion) updateCheckResult = UpdateCheckResult.OUT_DATED;
@@ -49,11 +50,11 @@ public class UpdateManager {
         if (getUpdateCheckResult() != UpdateCheckResult.OUT_DATED) return;
 
         if (configManager.isUpdateNotif()) {
-            String message = messageManager.get(Message.UPDATEAVAILABLE);
+            String message = sender instanceof ConsoleCommandSender ? messageManager.getWithoutPrefix(Message.UPDATEAVAILABLE) : messageManager.get(Message.UPDATEAVAILABLE);
             if (message == null) return;
 
             if (sender instanceof ConsoleCommandSender) Utils.consoleMsg(message);
-            else sender.sendMessage(message);
+            else sender.sendMessage(Utils.addColour(message));
         }
     }
 

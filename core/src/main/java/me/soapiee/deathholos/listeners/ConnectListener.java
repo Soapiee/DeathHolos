@@ -23,11 +23,11 @@ public class ConnectListener implements Listener {
         Player player = event.getPlayer();
 
         Bukkit.getScheduler().runTaskLater(main, () -> {
-            if (player.hasPermission("deathholos.admin")) updateNotif(player);
+            if (player.hasPermission("deathholos.admin.updatenotif")) updateNotif(player);
         }, 20);
     }
 
     private void updateNotif(Player player) {
-//        if (configManager.isUpdateNotif()) main.getUpdateManager().updateAlert(player);
+        if (configManager.isUpdateNotif()) main.getUpdateManager().updateAlert(player);
     }
 }
