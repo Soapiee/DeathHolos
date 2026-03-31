@@ -37,8 +37,7 @@ public class UpdateManager {
             return;
         }
 
-//        int currentVersion = Integer.parseInt(currentVersionString.replace("v", "").replace(".", ""));
-        int currentVersion = 98;
+        int currentVersion = Integer.parseInt(currentVersionString.replace("v", "").replace(".", ""));
         int latestVersion = Integer.parseInt(getLatestVersion().replace("v", "").replace(".", ""));
 
         if (currentVersion < latestVersion) updateCheckResult = UpdateCheckResult.OUT_DATED;

@@ -6,6 +6,7 @@ import me.soapiee.deathholos.managers.MessageManager;
 import me.soapiee.deathholos.utils.CustomLogger;
 import me.soapiee.deathholos.utils.Message;
 import me.soapiee.deathholos.utils.Utils;
+import org.bukkit.ChatColor;
 
 public class InternalsManager {
 
@@ -17,14 +18,15 @@ public class InternalsManager {
     public InternalsManager(DeathHolos main) {
         customLogger = main.getCustomLogger();
         messageManager = main.getMessageManager();
+        boolean debugMode = main.getConfigManager().isDebugMode();
 
         int majorVersion = Utils.getMajorVersion();
         int minorVersion = Utils.getMinorVersion();
 
-        hologramHandler = getHologramHandler(majorVersion, minorVersion);
+        hologramHandler = getHologramHandler(debugMode, majorVersion, minorVersion);
     }
 
-    private HologramHandler getHologramHandler(int majorVersion, int minorVersion) {
+    private HologramHandler getHologramHandler(boolean debug, int majorVersion, int minorVersion) {
         HologramHandler hologramHandler;
 
         try {
@@ -33,6 +35,7 @@ public class InternalsManager {
             if (majorVersion == 19 && minorVersion > 3) providerName = "HologramHandler_1_19_4";
             if (majorVersion > 19) providerName = "HologramHandler_1_19_4";
 
+            if (debug) Utils.consoleMsg(ChatColor.BLUE + providerName);
             hologramHandler = (HologramHandler) Class.forName(packageName + "." + providerName).newInstance();
 
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException |

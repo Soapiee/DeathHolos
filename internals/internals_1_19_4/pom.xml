@@ -7,7 +7,7 @@
     <parent>
         <groupId>me.soapiee</groupId>
         <artifactId>deathholos-internals</artifactId>
-        <version>1.0.0</version>
+        <version>1.0.1</version>
     </parent>
 
     <artifactId>deathholos-internals_1_19_4</artifactId>
@@ -68,7 +68,7 @@
         <dependency>
             <groupId>me.soapiee</groupId>
             <artifactId>deathholos-core</artifactId>
-            <version>1.0.0</version>
+            <version>1.0.1</version>
         </dependency>
         <dependency>
         <groupId>org.projectlombok</groupId>

@@ -42,7 +42,7 @@ class GroupFactoryTest {
     }
 
     @Test
-    void givenBiomeLevel_whenInitialised_thenReturnNotNull() {
+    void givenGroupFactory_whenInitialised_thenReturnNotNull() {
         assertNotNull(groupFactory);
     }
 
