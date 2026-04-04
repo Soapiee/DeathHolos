@@ -7,6 +7,7 @@ import me.soapiee.deathholos.utils.Message;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class GroupFactory {
@@ -43,7 +44,8 @@ public class GroupFactory {
         } catch (NumberFormatException ignored) {
         }
 
-        if (priority <= -1) customLogger.logToPlayer(sender, null, messageManager.getWithPlaceholder(Message.GROUPPRIORITYERROR, groupName, (sender instanceof ConsoleCommandSender)));
+        if (priority <= -1)
+            customLogger.logToPlayer(sender, null, messageManager.getWithPlaceholder(Message.GROUPPRIORITYERROR, groupName, (sender instanceof ConsoleCommandSender)));
 
         return priority;
     }
@@ -64,8 +66,39 @@ public class GroupFactory {
 
     private List<String> validateText(CommandSender sender, List<String> list, String groupName) {
         if (list != null && list.isEmpty()) list = null;
-        if (list == null) customLogger.logToPlayer(sender, null, messageManager.getWithPlaceholder(Message.GROUPDESIGNERROR, groupName, (sender instanceof ConsoleCommandSender)));
+        if (list == null)
+            customLogger.logToPlayer(sender, null, messageManager.getWithPlaceholder(Message.GROUPDESIGNERROR, groupName, (sender instanceof ConsoleCommandSender)));
+
+        if (list != null) list = checkNewLineFunction(list);
 
         return list;
+    }
+
+    private List<String> checkNewLineFunction(List<String> list) {
+        boolean functionExists = false;
+
+        for (String line : list) {
+            if (line.contains("\n")) {
+                functionExists = true;
+                break;
+            }
+        }
+
+        if (!functionExists) return list;
+
+        List<String> newList = new ArrayList<>();
+        for (String line : list) {
+            if (line.contains("\n")) {
+                String[] additionalLines = line.split("\n");
+                for (String string : additionalLines) {
+                    newList.add(string.trim());
+                }
+                continue;
+            }
+
+            newList.add(line);
+        }
+
+        return newList;
     }
 }

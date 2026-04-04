@@ -2,6 +2,7 @@ package me.soapiee.deathholos.internals;
 
 import lombok.Getter;
 import me.soapiee.deathholos.DeathHolos;
+import me.soapiee.deathholos.managers.ConfigManager;
 import me.soapiee.deathholos.managers.MessageManager;
 import me.soapiee.deathholos.utils.CustomLogger;
 import me.soapiee.deathholos.utils.Message;
@@ -14,36 +15,44 @@ public class InternalsManager {
 
     private final CustomLogger customLogger;
     private final MessageManager messageManager;
+    private final ConfigManager configManager;
+    private final boolean decentHologramsHook;
 
     public InternalsManager(DeathHolos main) {
         customLogger = main.getCustomLogger();
         messageManager = main.getMessageManager();
-        boolean debugMode = main.getConfigManager().isDebugMode();
+        decentHologramsHook = main.isDecentHologramsHooked();
+        configManager = main.getConfigManager();
 
-        int majorVersion = Utils.getMajorVersion();
-        int minorVersion = Utils.getMinorVersion();
-
-        hologramHandler = getHologramHandler(debugMode, majorVersion, minorVersion);
+        hologramHandler = initialiseHologramHandler();
     }
 
-    private HologramHandler getHologramHandler(boolean debug, int majorVersion, int minorVersion) {
+    private HologramHandler initialiseHologramHandler() {
         HologramHandler hologramHandler;
 
         try {
             String packageName = InternalsManager.class.getPackage().getName();
-            String providerName = "HologramHandlerLegacy";
-            if (majorVersion == 19 && minorVersion > 3) providerName = "HologramHandler_1_19_4";
-            if (majorVersion > 19) providerName = "HologramHandler_1_19_4";
+            String providerName = getProviderName();
 
-            if (debug) Utils.consoleMsg(ChatColor.BLUE + providerName);
+            if (configManager.isDebugMode()) Utils.consoleMsg(ChatColor.BLUE + providerName);
             hologramHandler = (HologramHandler) Class.forName(packageName + "." + providerName).newInstance();
 
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException |
                  ClassCastException | IllegalArgumentException ex) {
             customLogger.logToFile(ex, messageManager.get(Message.LEGACYHOLOGRAMS));
-            hologramHandler = new HologramHandlerLegacy();
+            hologramHandler = new HologramHandler_Legacy();
         }
 
         return hologramHandler;
+    }
+
+    private String getProviderName() {
+        int majorVersion = Utils.getMajorVersion();
+        int minorVersion = Utils.getMinorVersion();
+
+        if (decentHologramsHook) return "HologramHandler_DecentHolograms";
+        if (majorVersion > 19) return "HologramHandler_1_19_4";
+
+        return (majorVersion == 19 && minorVersion > 3) ? "HologramHandler_1_19_4" : "HologramHandler_Legacy";
     }
 }

@@ -92,7 +92,8 @@ public class MessageManager {
                 || messageEnum == Message.KILL || messageEnum == Message.WORLD_BORDER
                 || messageEnum == Message.CMDHOLOCAUSE || messageEnum == Message.CMDHOLOKILLER
                 || messageEnum == Message.CAMPFIRE || messageEnum == Message.DEATHCAUSEERROR
-                || messageEnum == Message.HOOKEDPLACEHOLDERAPI || messageEnum == Message.NOPERMISSION
+                || messageEnum == Message.HOOKEDPLACEHOLDERAPI || messageEnum == Message.HOOKEDDECENTHOLOGRAMS
+                || messageEnum == Message.NOPERMISSION
                 || messageEnum == Message.ADMINHELP
 //                || messageEnum == Message.PLAYERHELP
                 || messageEnum == Message.LANGUAGEFIELDERROR || messageEnum == Message.INVALIDLANGUAGE

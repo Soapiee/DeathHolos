@@ -5,6 +5,7 @@ no_permission: "&cDu hast keine berechtigung, diesen befehl zu nutzen"
 language_field_error: "&cNeue felder konnten der sprachdatei nicht hinzugefügt werden"
 invalid_language: "&cEine ungültige sprache wurde konfiguriert. Standardeinstellung \"lang_en\" wird verwendet"
 hooked_placeholderapi: "&aVerbindung zu PlaceholderAPI hergestellt"
+hooked_decentholograms: "&aVerbindung zu DecentHolograms hergestellt"
 logger_file_error: "&cDie datei logger.log konnte nicht erstellt werden"
 logger_log_success: "&cEin fehler wurde in die datei logger.log eingetragen"
 logger_log_error: "&cEin neuer fehlerlog konnte nicht gespeichert werden"
@@ -14,7 +15,7 @@ duplicate_group_priority: "&cDie priorität für die hologramm-gruppe &e%group_i
 invalid_group_permission: "&cUngültige berechtigung für hologramm-gruppe &e%group_identifier%"
 invalid_group_design: "&cUngültiges design für hologramm-gruppe &e%group_identifier%"
 group_created: "&aGruppe &e%group_identifier% &awurde erfolgreich erstellt"
-legacy_holograms_enabled: "&aDeine version ist niedriger als 1.19.4, daher wurde das alte hologramm-system aktiviert"
+legacy_holograms_enabled: "&aDeine Version ist niedriger als 1.19.4 und es wurde keine Hologramm-Abhängigkeit gefunden, daher wurde das Legacy-Hologramm-System aktiviert"
 death_cause_error: "&cEs gab einen fehler bei der todesursache des spielers. Sende den log an den entwickler"
 
 #                    --->    ADMIN NACHRICHTEN    <---

@@ -9,6 +9,7 @@ public enum Message {
     LANGUAGEFIELDERROR("language_field_error", "&cCould not add new fields to the language file"),
     INVALIDLANGUAGE("invalid_language", "&cAn invalid language has been configured. Defaulting to \"lang_en\""),
     HOOKEDPLACEHOLDERAPI("hooked_placeholderapi", "&aHooked into PlaceholderAPI"),
+    HOOKEDDECENTHOLOGRAMS("hooked_decentholograms", "&aHooked into DecentHolograms"),
     LOGGERFILEERROR("logger_file_error", "&cThe logger.log file could not be created"),
     LOGGERLOGSUCCESS("logger_log_success", "&cAn error was added to the logger.log file"),
     LOGGERLOGERROR("logger_log_error", "&cA new error log failed to be saved"),
@@ -18,7 +19,7 @@ public enum Message {
     GROUPPERMISSIONERROR("invalid_group_permission", "&cInvalid permission for hologram group &e%group_identifier%"),
     GROUPDESIGNERROR("invalid_group_design", "&cInvalid design for hologram group &e%group_identifier%"),
     GROUPCREATED("group_created", "&aGroup &e%group_identifier% &awas successfully created"),
-    LEGACYHOLOGRAMS("legacy_holograms_enabled", "&aYour version is below 1.19.4 so the legacy hologram system has been enabled"),
+    LEGACYHOLOGRAMS("legacy_holograms_enabled", "&aYour version is below 1.19.4 and no hologram dependency was found, so the legacy hologram system has been enabled"),
     DEATHCAUSEERROR("death_cause_error", "&cThere was an error with the players cause of death. Send the log to the developer"),
 
     //                    --->    ADMIN MESSAGES    <---
