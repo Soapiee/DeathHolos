@@ -19,6 +19,7 @@ public class ConfigManager {
     @Getter private double heightOffset;
     @Getter private boolean playerKillsOnly;
     @Getter private int maxHolos;
+    @Getter private boolean prioritiseHook;
     @Getter private Set<String> groupKeys;
 
     public ConfigManager(DeathHolos main) {
@@ -35,6 +36,7 @@ public class ConfigManager {
         heightOffset = getDouble(ConfigPath.HOLO_HEIGHT);
         playerKillsOnly = getBoolean(ConfigPath.PLAYER_KILL_ONLY);
         maxHolos = getInt(ConfigPath.MAX_HOLOS);
+        prioritiseHook = getBoolean(ConfigPath.PRIORITISE_HOOK);
         groupKeys = config.getConfigurationSection(ConfigPath.HOLOGRAM_SECTION.getPath()).getKeys(false);
     }
 

@@ -5,6 +5,7 @@ no_permission: "&cVous n'avez pas la permission d'utiliser cette commande"
 language_field_error: "&cImpossible d'ajouter de nouveaux champs au fichier de langue"
 invalid_language: "&cUne langue invalide a été configurée. Utilisation de \"lang_en\" par défaut"
 hooked_placeholderapi: "&aConnecté à PlaceholderAPI"
+hooked_decentholograms: "&aConnecté à DecentHolograms"
 logger_file_error: "&cLe fichier logger.log n'a pas pu être créé"
 logger_log_success: "&cUne erreur a été ajoutée au fichier logger.log"
 logger_log_error: "&cÉchec de l'enregistrement d'un nouveau journal d'erreurs"
@@ -14,7 +15,7 @@ duplicate_group_priority: "&cLa priorité définie pour le groupe d'hologrammes 
 invalid_group_permission: "&cPermission invalide pour le groupe d'hologrammes &e%group_identifier%"
 invalid_group_design: "&cDesign invalide pour le groupe d'hologrammes &e%group_identifier%"
 group_created: "&aLe groupe &e%group_identifier% &aa été créé avec succès"
-legacy_holograms_enabled: "&aVotre version est inférieure à 1.19.4, le système d'hologrammes legacy a donc été activé"
+legacy_holograms_enabled: "&aVotre version est inférieure à 1.19.4 et aucune dépendance de hologramme n'a été trouvée, donc le système de hologrammes legacy a été activé"
 death_cause_error: "&cUne erreur est survenue avec la cause de la mort du joueur. Envoyez le log au développeur"
 
 #                    --->    MESSAGES ADMIN    <---

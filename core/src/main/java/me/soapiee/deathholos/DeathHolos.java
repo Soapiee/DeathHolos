@@ -25,6 +25,7 @@ public final class DeathHolos extends JavaPlugin {
     @Getter private ConfigManager configManager;
     @Getter private HologramManager holoManager;
     @Getter private boolean placeholderAPIHooked;
+    @Getter private boolean decentHologramsHooked;
     @Getter private UpdateManager updateManager;
 
     @Override
@@ -34,8 +35,8 @@ public final class DeathHolos extends JavaPlugin {
         customLogger = new CustomLogger(this);
         new Metrics(this, 30432);
 
-        initiateManagers();
-        registerHooks();
+        registerManagers();
+//        registerHooks(); // Moved to registerManagers() method
         registerListeners();
         registerCommands();
 
@@ -48,11 +49,29 @@ public final class DeathHolos extends JavaPlugin {
         holoManager.clearAllHolos();
     }
 
+    private void registerManagers() {
+        configManager = new ConfigManager(this);
+        registerHooks();
+        internalsManager = new InternalsManager(this);
+        GroupFactory groupFactory = new GroupFactory(this);
+        holoManager = new HologramManager(this, groupFactory);
+    }
+
     private void registerHooks() {
+        placeholderAPIHooked = false;
         if (getServer().getPluginManager().getPlugin("PlaceholderAPI") != null) {
+            if (!getServer().getPluginManager().getPlugin("PlaceholderAPI").isEnabled()) return;
             placeholderAPIHooked = true;
             if (configManager.isDebugMode()) Utils.consoleMsg(messageManager.get(Message.HOOKEDPLACEHOLDERAPI));
-        } else placeholderAPIHooked = false;
+        }
+
+        decentHologramsHooked = false;
+        if (getServer().getPluginManager().getPlugin("DecentHolograms") != null) {
+            if (!getServer().getPluginManager().getPlugin("DecentHolograms").isEnabled()) return;
+            if (!configManager.isPrioritiseHook()) return;
+            decentHologramsHooked = true;
+            Utils.consoleMsg(messageManager.get(Message.HOOKEDDECENTHOLOGRAMS));
+        }
     }
 
     private void registerListeners() {
@@ -64,12 +83,5 @@ public final class DeathHolos extends JavaPlugin {
         getCommand("adeathholos").setExecutor(new AdminCmd(this));
         // TODO:
 //        getCommand("deathholos").setExecutor(new PlayerCmd(this));
-    }
-
-    private void initiateManagers() {
-        configManager = new ConfigManager(this);
-        internalsManager = new InternalsManager(this);
-        GroupFactory groupFactory = new GroupFactory(this);
-        holoManager = new HologramManager(this, groupFactory);
     }
 }

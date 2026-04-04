@@ -5,6 +5,7 @@ no_permission: "&cje hebt geen toestemming om dit commando te gebruiken"
 language_field_error: "&ckon geen nieuwe velden toevoegen aan het taalbestand"
 invalid_language: "&cer is een ongeldige taal geconfigureerd. Standaard ingesteld op \"lang_en\""
 hooked_placeholderapi: "&averbonden met PlaceholderAPI"
+hooked_decentholograms: "&averbonden met DecentHolograms"
 logger_file_error: "&chet bestand logger.log kon niet worden aangemaakt"
 logger_log_success: "&cer is een fout toegevoegd aan het bestand logger.log"
 logger_log_error: "&chet opslaan van een nieuw foutenlogboek is mislukt"
@@ -14,7 +15,7 @@ duplicate_group_priority: "&cde prioriteit voor hologramgroep &e%group_identifie
 invalid_group_permission: "&congeldige toestemming voor hologramgroep &e%group_identifier%"
 invalid_group_design: "&congeldig ontwerp voor hologramgroep &e%group_identifier%"
 group_created: "&agroep &e%group_identifier% &ais succesvol aangemaakt"
-legacy_holograms_enabled: "&aje versie is lager dan 1.19.4, dus het legacy hologram-systeem is ingeschakeld"
+legacy_holograms_enabled: "&aJe versie is lager dan 1.19.4 en er is geen hologram-afhankelijkheid gevonden, dus het legacy hologram-systeem is ingeschakeld"
 death_cause_error: "&cer is een fout opgetreden bij de doodsoorzaak van de speler. Stuur het logboek naar de ontwikkelaar"
 
 #                    --->    ADMIN BERICHTEN    <---

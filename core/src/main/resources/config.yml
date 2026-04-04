@@ -35,6 +35,14 @@ settings:
   # Default: 5
   max_hologram_per_player: 5
 
+  # If you have "DecentHolograms" installed on your server, do you want this plugin to prioritize using that plugins hologram spawning system,
+  # or do you want this plugin to handle spawning holograms.
+  #
+  # IMPORTANT: For versions 1.16 - 1.19.3, it is highly recommended that you use DecentHolograms to spawn the holograms.
+  #
+  # Default: true
+  prioritize_hologram_hook: true
+
 
 hologram_groups:
   # Valid placeholders to use inside the hologram design
@@ -50,7 +58,7 @@ hologram_groups:
   # If a player doesnt have a deathholos.group.{group} permission, the hologram with the lowest priority (higher number) will be used.
   # If a player has multiple permissions, the one with the highest priority (lower number) will be used.
   # 1 being the highest priority. 100 being a low priority number.
-  # Give the permission "deathholo.silentdeath" to a player, for no hologram to be spawned on their death.
+  # Give the permission "deathholos.silentdeath" to a player, for no hologram to be spawned on their death.
   donator:
     priority: 1
     permission: deathholos.group.donator

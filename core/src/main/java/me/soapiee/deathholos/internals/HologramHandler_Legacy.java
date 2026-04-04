@@ -8,7 +8,7 @@ import org.bukkit.entity.ArmorStand;
 import org.bukkit.entity.Entity;
 import org.bukkit.persistence.PersistentDataType;
 
-public class HologramHandlerLegacy implements HologramHandler {
+public class HologramHandler_Legacy implements HologramHandler {
 
     @Override public void spawn(Hologram holo) {
         Location location = holo.getLocation().clone();

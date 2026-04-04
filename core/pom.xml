@@ -10,13 +10,14 @@
     <parent>
         <groupId>me.soapiee</groupId>
         <artifactId>deathholos-parent</artifactId>
-        <version>1.0.1</version>
+        <version>1.1.0</version>
     </parent>
 
     <properties>
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <mc.version>1.16.1-R0.1-SNAPSHOT</mc.version>
+        <dh.version>2.9.9</dh.version>
         <mockito.version>5.19.0</mockito.version>
         <lombok.version>1.18.42</lombok.version>
     </properties>
@@ -99,6 +100,10 @@
             <id>placeholderapi</id>
             <url>https://repo.extendedclip.com/releases/</url>
         </repository>
+        <repository>
+            <id>codemc</id>
+            <url>https://repo.codemc.io/repository/maven-public/</url>
+        </repository>
     </repositories>
 
     <dependencyManagement>
@@ -166,6 +171,12 @@
             <groupId>me.clip</groupId>
             <artifactId>placeholderapi</artifactId>
             <version>2.11.6</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.github.decentsoftware-eu</groupId>
+            <artifactId>decentholograms</artifactId>
+            <version>${dh.version}</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
