@@ -120,8 +120,14 @@ public class DeathListener implements Listener {
     }
 
     private Location getLocation(Location deathLoc) {
+        Location location = deathLoc.clone();
+
+        while (location.getBlock().isLiquid()) {
+            location.add(0, 1, 0);
+        }
+
         double heightOffset = configManager.getHeightOffset();
-        return deathLoc.clone().add(0, heightOffset, 0);
+        return location.add(0, heightOffset, 0);
     }
 
     private List<String> getText(List<String> defaultText, Player died, Entity killer) {
