@@ -28,3 +28,5 @@ There is one **OPTIONAL** dependency
 ## Documentation
 - [Wiki](https://github.com/Soapiee/DeathHolos/wiki)  
 - [Spigot Page](https://www.spigotmc.org/resources/death-holograms-1-16-26-1.133766/)
+- [Hangar Page](https://hangar.papermc.io/Soapiee/DeathHolograms)
+- [Modrinth Page](https://modrinth.com/plugin/deathholograms)
