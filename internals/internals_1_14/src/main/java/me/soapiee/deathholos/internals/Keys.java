@@ -1,4 +1,4 @@
-package me.soapiee.deathholos.utils;
+package me.soapiee.deathholos.internals;
 
 import me.soapiee.deathholos.DeathHolos;
 import org.bukkit.NamespacedKey;

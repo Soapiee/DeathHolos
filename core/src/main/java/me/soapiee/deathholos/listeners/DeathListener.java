@@ -14,7 +14,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
-import org.bukkit.event.entity.PlayerDeathEvent;
+import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.projectiles.ProjectileSource;
 
 import java.util.ArrayList;
@@ -37,9 +37,25 @@ public class DeathListener implements Listener {
         placeholderAPIEnabled = main.isPlaceholderAPIHooked();
     }
 
+//    @EventHandler
+//    public void onDeath(PlayerDeathEvent event) {
+//        Player whoDied = event.getEntity();
+//        if (whoDied.hasPermission("deathholos.silentdeath")) return;
+//
+//        String keyID = createKeyID(whoDied.getUniqueId());
+//        if (keyID == null) return;
+//
+//        LivingEntity killer = getKiller(whoDied);
+//        if (killer != null) handleKillerDeath(whoDied, killer, keyID);
+//        if (killer == null && !configManager.isPlayerKillsOnly()) handleEnvironmentDeath(whoDied, keyID);
+//    }
+
     @EventHandler
-    public void onDeath(PlayerDeathEvent event) {
-        Player whoDied = event.getEntity();
+    public void onDeath(EntityDeathEvent event) {
+        LivingEntity entity = event.getEntity();
+        if (!(entity instanceof Player)) return;
+
+        Player whoDied = (Player) entity;
         if (whoDied.hasPermission("deathholos.silentdeath")) return;
 
         String keyID = createKeyID(whoDied.getUniqueId());

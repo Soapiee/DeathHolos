@@ -10,13 +10,13 @@
     <parent>
         <groupId>me.soapiee</groupId>
         <artifactId>deathholos-parent</artifactId>
-        <version>1.1.1</version>
+        <version>1.1.2</version>
     </parent>
 
     <properties>
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <mc.version>1.16.1-R0.1-SNAPSHOT</mc.version>
+        <mc.version>1.9-R0.1-SNAPSHOT</mc.version>
         <dh.version>2.9.9</dh.version>
         <mockito.version>5.19.0</mockito.version>
         <lombok.version>1.18.42</lombok.version>

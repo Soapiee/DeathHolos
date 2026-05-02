@@ -1,12 +1,15 @@
 package me.soapiee.deathholos.internals;
 
 import me.soapiee.deathholos.logic.Hologram;
-import me.soapiee.deathholos.utils.Keys;
 import me.soapiee.deathholos.utils.Utils;
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.ArmorStand;
 import org.bukkit.entity.Entity;
-import org.bukkit.persistence.PersistentDataType;
+import org.bukkit.metadata.FixedMetadataValue;
+import org.bukkit.metadata.MetadataValue;
+
+import java.util.List;
 
 public class HologramHandler_Legacy implements HologramHandler {
 
@@ -18,20 +21,30 @@ public class HologramHandler_Legacy implements HologramHandler {
             ArmorStand armourStand = location.getWorld().spawn(location, ArmorStand.class);
             armourStand.setVisible(false);
             armourStand.setGravity(false);
-            armourStand.setInvulnerable(true);
-            armourStand.getPersistentDataContainer().set(Keys.HOLOGRAMKEY, PersistentDataType.STRING, holo.getKeyID());
+//            armourStand.setInvulnerable(true);
+            armourStand.setMetadata("hologram", new FixedMetadataValue(Bukkit.getPluginManager().getPlugin("DeathHolos"), holo.getKeyID()));
             armourStand.setCustomNameVisible(true);
             armourStand.setCustomName(Utils.addColour(line));
             location.subtract(0, 0.25, 0);
         }
     }
 
-    @Override public void despawn(Hologram holo) {
+    @Override
+    public void despawn(Hologram holo) {
         Location location = holo.getLocation();
-        for (Entity entity : location.getWorld().getNearbyEntities(location, 5, 5, 5)) {
-            if (entity instanceof ArmorStand && entity.getPersistentDataContainer().has(Keys.HOLOGRAMKEY, PersistentDataType.STRING)) {
-                String id = entity.getPersistentDataContainer().get(Keys.HOLOGRAMKEY, PersistentDataType.STRING);
-                if (id.equalsIgnoreCase(holo.getKeyID())) entity.remove();
+        for (Entity entity : location.getChunk().getEntities()) {
+
+            if (entity instanceof ArmorStand && entity.hasMetadata("hologram")) {
+                List<MetadataValue> metaData = entity.getMetadata("hologram");
+
+                for (MetadataValue metadataValue : metaData) {
+                    if (!(metadataValue instanceof FixedMetadataValue)) continue;
+
+                    FixedMetadataValue fixedMetadataValue = (FixedMetadataValue) metadataValue;
+                    if (fixedMetadataValue.value().equals(holo.getKeyID())) {
+                        entity.remove();
+                    }
+                }
             }
         }
     }

@@ -52,7 +52,8 @@ public class InternalsManager {
 
         if (decentHologramsHook) return "HologramHandler_DecentHolograms";
         if (majorVersion > 19) return "HologramHandler_1_19_4";
+        if (majorVersion == 19 && minorVersion > 3) return "HologramHandler_1_19_4";
 
-        return (majorVersion == 19 && minorVersion > 3) ? "HologramHandler_1_19_4" : "HologramHandler_Legacy";
+        return (majorVersion >= 14) ? "HologramHandler_1_14" : "HologramHandler_Legacy";
     }
 }
